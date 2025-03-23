@@ -272,6 +272,17 @@ def main():
         robot_radius=0.8)
     path = rrt_star.planning(animation=show_animation)
 
+    # # Test case for starting in an obstacle:
+    # # the information for the rrt star is start=(0.0, 0.0) goal=(4.0, 0.0) limits=[-9, 9] obstacles=[(0.0, 0.0, 3), (7, 0, 1.5)]
+    # rrt_star = RRTStar(
+    #     start=[0.0, 0.0],
+    #     goal=[4.0, 0.0],
+    #     rand_area=[-9, 9],
+    #     obstacle_list=[(0.0, 0.0, 3), (7, 0, 1.5)],
+    #     expand_dis=1,
+    #     robot_radius=0.3)
+    # path = rrt_star.planning(animation=show_animation)
+
     if path is None:
         print("Cannot find path")
     else:
